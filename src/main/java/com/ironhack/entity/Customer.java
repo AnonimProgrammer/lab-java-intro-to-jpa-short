@@ -8,7 +8,7 @@ import jakarta.persistence.*;
 public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false)
     private String name;
@@ -18,20 +18,20 @@ public class Customer {
     private CustomerStatus status = CustomerStatus.NONE;
 
     @Column(name = "total_customer_mileage", nullable = false)
-    private Long totalCustomerMileage;
+    private Integer totalCustomerMileage;
 
     public Customer() {}
-    public Customer(String name, CustomerStatus status, Long totalCustomerMileage) {
+    public Customer(String name, CustomerStatus status, Integer totalCustomerMileage) {
         this.name = name;
         this.status = status;
         this.totalCustomerMileage = totalCustomerMileage;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -43,11 +43,11 @@ public class Customer {
         this.name = name;
     }
 
-    public Long getTotalCustomerMileage() {
+    public Integer getTotalCustomerMileage() {
         return totalCustomerMileage;
     }
 
-    public void setTotalCustomerMileage(Long totalCustomerMileage) {
+    public void setTotalCustomerMileage(Integer totalCustomerMileage) {
         this.totalCustomerMileage = totalCustomerMileage;
     }
 

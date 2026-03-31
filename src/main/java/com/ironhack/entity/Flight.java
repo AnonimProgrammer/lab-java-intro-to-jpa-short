@@ -2,17 +2,15 @@ package com.ironhack.entity;
 
 import jakarta.persistence.*;
 
-import java.util.UUID;
-
 @Entity
 @Table(name = "flights")
 public class Flight {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false, unique = true)
-    private UUID number;
+    private String number;
 
     @Column(nullable = false)
     private String aircraft;
@@ -24,26 +22,26 @@ public class Flight {
     private Integer mileage;
 
     public Flight() {}
-    public Flight(UUID number, String aircraft, Integer totalAircraftSeats, Integer mileage) {
+    public Flight(String number, String aircraft, Integer totalAircraftSeats, Integer mileage) {
         this.number = number;
         this.aircraft = aircraft;
         this.totalAircraftSeats = totalAircraftSeats;
         this.mileage = mileage;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public UUID getNumber() {
+    public String getNumber() {
         return number;
     }
 
-    public void setNumber(UUID number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 

@@ -7,7 +7,7 @@ import jakarta.persistence.*;
 public class FlightBooking {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
 
     @ManyToOne
     @JoinColumn(name = "customer_id", nullable = false)
@@ -39,11 +39,11 @@ public class FlightBooking {
         this.flight = flight;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 }
