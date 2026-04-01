@@ -3,4 +3,10 @@ package com.ironhack.repository;
 import com.ironhack.entity.FlightBooking;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface FlightBookingRepository extends JpaRepository<FlightBooking, Long> {}
+import java.util.List;
+
+public interface FlightBookingRepository extends JpaRepository<FlightBooking, Integer> {
+    List<FlightBooking> findByCustomerId(Integer customerId);
+
+    List<FlightBooking> findByFlightId(Integer flightId);
+}
